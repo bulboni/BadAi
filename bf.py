@@ -178,8 +178,12 @@ def run_bruteforce(page):
 def main():
     with sync_playwright() as p:
         launch_args = {
-            "headless": False,  # Ubah ke True jika ingin menjalankan secara background tanpa GUI
-            "args": ["--disable-blink-features=AutomationControlled"]
+            "headless": True,   # <--- Ubah dari False menjadi True
+            "args": [
+                "--disable-blink-features=AutomationControlled",
+                "--no-sandbox",
+                "--disable-dev-shm-usage"
+            ]
         }
         
         # Tambahkan konfigurasi proxy jika PROXY_URL diisi
