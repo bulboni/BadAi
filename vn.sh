@@ -25,7 +25,7 @@ vncserver -kill :1 2>/dev/null || true
 
 # --- 4. Jalankan VNC server di display :1 ---
 echo "[*] Menjalankan VNC server di :1..."
-vncserver :1 -geometry 1280x720 -depth 24 -localhost yes
+vncserver :1 -geometry 1280x720 -depth 24
 
 # --- 5. Siapkan noVNC ---
 ln -sf /usr/share/novnc/vnc.html /usr/share/novnc/index.html
